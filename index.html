@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Free Book</title>
+</head>
+<body>
+  <section class="banner" id="sec">
+    <header >
+      <a href="#" class="logo"><img class="icon" src="./img/Logo Free Book.png" alt=""></a>
+    <div  id="toggle" onclick="toggle()"></div>
+    </header>
+      <div class="content">
+        <h2>Olá seja Bem-Vindo,<br>Ao <span>Free Book </span>sua biblioteca virtual</h2>
+        <!--escrever algo sobre a biblioteca-->
+        <p>Free Book e uma biblioteca de livros didáticos voltada para o uso escolar, social e conta com a ajuda de contribuidores para que mais livros sejam adicionados em seu acervo.</p>
+      </div>
+
+  </section>
+
+  <section id="Serviços">
+    <header >
+      <a href="#" class="logo">Nossos serviços</a>
+    <div  id="toggle" onclick="toggle()"></div>
+    </header>
+        <div class="upload">
+            <img src="/img/Download.jpg" alt="Upload de arquivos">
+            <div>
+              <h2>Upload de Arquivos</h2>
+              <p>Nossa plataforma conta com <Strong><span>upload de livros em PDF</span></Strong> onde cada membro pode contribuir para o acervo da nossa biblioteca assim deixando ainda mais conteúdo disponível para que outros membros tenham acesso a esse vasto conhecimento</p>
+            </div>
+        </div>
+        <div class="download">
+          <div>
+            <h2>Download de Arquivos</h2>
+            <p>Nós também contamos com a opção de <Strong><apsn>download de livros</apsn></Strong>, assim disponibilizando aos nossos membros lerem os nossos livros em qual quer lugar dando a elas um conforto melhor e se tratando de um ambiente escolar uma melhor distribuirão de material.</p>
+          </div>
+          <img src="/img/Upload.jpg" alt="Upload de arquivos">
+      </div>
+  </section>
+ 
+  <section id="Contato">
+      <header >
+        <a href="#" class="logo">Entre em contato</a>
+      <div  id="toggle" onclick="toggle()"></div>
+      </header>
+      <div>
+        <form action="">
+          <fieldset>
+            <legend>Seus dados</legend>
+  
+            <div class="input-block">
+              <label for="name">Nome Completo</label>
+              <input name="name" id="name">
+            </div>
+  
+            <div class="input-block">
+              <label for="Email">Email<small>(Escreva seu Email corretamente)</small></label>
+              <input name="Email" id="Email" type="email">
+            </div>
+  
+            <div class="textarea-block">
+              <label for="assunto">Assunto</label>
+                <textarea name="assunto" id="assunto"></textarea>
+            </div> 
+          </fieldset>
+        </form>
+      </div>
+  </section>
+
+
+  <div id="navigation">
+    <ul>
+      <li><a href="#sec">Home</a></li>
+      <li><a href="#Serviços">Serviços</a></li>
+      <li><a href="#Contato">Contato</a></li>
+      <li><a href="#Contato">Download</a></li>
+    </ul>
+  </div>
+
+  <script src="/Js/script.js"></script>
+</body>
+</html>

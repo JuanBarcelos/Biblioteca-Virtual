@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+header
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 100px;
+  z-index: 10000;
+  transition: 0.6s;
+}
+header .logo 
+{
+  position: relative;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform:uppercase;
+  letter-spacing: 2px;
+  transition: 0.6s;
+}
+.icon{
+width: 80px;
+  border-radius: 50%;
+}
+header #toggle
+{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+header #toggle:before
+{
+  content: '';
+  position: absolute;
+  top: 7px;
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+header #toggle:after
+{
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+/*fazer o simbolo de closed*/
+.banner.active header #toggle::before,
+#Serviços.active header #toggle::before,
+#Contato.active header #toggle::before
+{
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+.banner.active header #toggle:after,
+#Serviços.active header #toggle::after,
+#Contato.active header #toggle::after
+{
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+/*colocar img no fundo da pag*/
+.banner
+{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  background: url(/img/Baner.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  z-index: 2;
+}
+#Serviços
+{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  background: url(/img/Serviços.jpg);
+  background-size: cover;
+  transition: 0.5s;
+  z-index: 2;
+}
+.download h2
+{
+  text-align-last: right;
+  color: #189494;
+  font-size: 2.2em;
+  margin-right: 1em;
+}
+.upload h2
+{
+  color: #189494;
+  font-size: 2.2em;
+}
+.upload, 
+.download
+{
+  margin-top: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 2em;
+}
+.download
+{
+  margin-top: 0;
+  margin-bottom: 6em;
+}
+
+.upload img,
+.download img
+{
+  width: 50em;
+  border-radius: 25%;
+  margin-right: 2em;
+}
+
+.upload p,
+.download p
+{
+  font-size: 1.2em;
+  color: black;
+  font-style: oblique;
+  font-weight: 700 bold;
+  padding-left: 1em;
+}
+
+#Contato
+{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  background: url(/img/Fundo.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  z-index: 2;
+  
+}
+
+#Contato fieldset
+{
+  border: none;
+  padding: 0 2.4em;
+}
+#Contato fieldset legend
+ {
+  font: 700 1.5em Poppins;
+  color: #189494;
+  margin-bottom: 1.4em;
+
+  display: flex;
+ align-items: center;
+ justify-content: space-between;
+  
+  width: 100%;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid white;
+}
+.input-block label,
+.textarea-block label
+{
+  
+  font-size: 1.4em;
+  color: white;
+}
+.input-block input,
+.textarea-block textarea
+{
+  width: 100%;
+  height: 2em;
+  margin-top: 0.8em;
+  border-radius: 0.8em;
+  background: none;
+  border: 1px solid whitesmoke;
+  outline: 0;
+  padding: 0 1.6em;
+  font: 1em Poppins;
+  color: whitesmoke;
+}
+.textarea-block textarea
+{
+  padding: 1.2em 1.6em;
+  height: 16em;
+  resize: vertical;
+}
+.input-block, 
+.textarea-block
+{
+  position: relative;
+}
+.input-block:focus-within::after,
+.textarea-block:focus-within::after
+{
+  content:"";
+  width: calc(100% - 3.2em);
+  height: 2px;
+  background: #189494;
+  position: absolute;
+  left: 1.6em;
+  right: 1.6em;
+  bottom:0px;
+}
+#Contato .input-block+.input-block,
+#Contato .input-block+.textarea-block
+{
+  margin-top: 2.4em;
+}
+label small
+{
+  font-size: 0.7em;
+  padding-left: 0.3em;
+  color: whitesmoke;
+}
+/*criar um menu lateral*/
+.banner.active,
+#Serviços.active,
+#Contato.active
+{
+  transform: translateX(-400px);
+}
+
+/*continuação do menu lateral*/
+#navigation
+{
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  background: #189494;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  transition: 0.5s;
+}
+#navigation.active
+{
+  right: 0;
+}
+#navigation ul
+{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#navigation ul li
+{
+  list-style: none;
+}
+#navigation ul li a
+{
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+/*mechendo no texto*/
+.content
+{
+  max-width: 600px;
+}
+.content h2
+{
+  color: white;
+  font-size: 2.5em;
+}
+.content h2 span
+{
+  color: #189494;
+  font-size: 1.2em;
+}
+.content p
+{
+  font-size: 1.2em;
+  color: white;
+  font-weight: 300;
+}
+.content a
+{
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  background: #189494;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 1em;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 500; 
+}
+
+@media (max-width: 700px)
+{
+  header
+  {
+    padding: 20px 50px;
+  }
+  .banner,
+  #Serviços,
+  #Contato
+  {
+    padding: 100px 50px 150px;
+  }
+  .banner h2,
+  #Serviços .download h2,
+  #Serviços .upload h2
+  {
+    font-size: 1.8em;
+  }
+  .banner .content p,
+  #Serviços .upload p,
+  #Serviços .download p
+  {
+    margin-top: 0.2em;
+    font-size: 1em;
+  }
+  .banner.active,
+  #Serviços.active,
+  #Contato.active
+  {
+    transform: translateX(-200px);
+  }
+  .download{
+    margin-top: 3em
+  }
+  #Contato fieldset legend{
+    padding-top: 1.2em;
+    font-size: 1.6em;
+  }
+  .input-block label,
+.textarea-block label{
+  font-size: 1em;
+}
+  #navigation
+  {
+    width: 200px;
+  }
+  #navigation ul li a
+  {
+    font-size: 1.5em;
+    margin: 5px 0;
+  }
+}
